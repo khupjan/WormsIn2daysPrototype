@@ -310,11 +310,7 @@ def init_map(is_hard_reload: bool; resolution: int2)
 
 
 
-var globalParticleTex: ImageHandle
 def init_resources()
-    globalParticleTex <- create_managed_image("resources/images/ball.png")
-    make_image_color_transparent(globalParticleTex, get_pixel(globalParticleTex, 0, 0))
-
     sky_gradient <- create_image(2, 2, [{uint[] make_color(0.1, 0.2, 0.4);  make_color(0.25, 0.2, 0.5);
                                                 make_color(0.0, 0.15, 0.0); make_color(0.0, 0.22, 0.0)}])
     sky_gradient |> set_image_smooth(true)
